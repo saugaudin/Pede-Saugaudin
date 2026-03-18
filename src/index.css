@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Woobly';
+  src: url('/fonts/woobly.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-base: #FBE5DB;
+  --color-retro-orange: #EF9145;
+  --color-retro-green: #1F694E;
+  --color-retro-brown: #432512;
+  
+  --font-woobly: "Woobly", "Fredoka", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-base text-retro-brown font-sans;
+  }
+}
+
+@layer utilities {
+  .bg-checkered {
+    background-image: conic-gradient(
+      var(--color-retro-orange) 90deg, 
+      var(--color-retro-green) 90deg 180deg, 
+      var(--color-retro-orange) 180deg 270deg, 
+      var(--color-retro-green) 270deg
+    );
+    background-size: 40px 40px;
+  }
+}
